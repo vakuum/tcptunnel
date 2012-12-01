@@ -1,0 +1,54 @@
+2012-10-20 tcptunnel-0.6
+
+	* Added fork option.
+
+	* Fixed code rot.
+
+	* Code cleanup.
+
+
+2010-09-21
+
+	* Added fork-based concurrent client handling.
+
+
+2010-09-16 tcptunnel-0.5
+
+	* Fixed version number.
+
+
+2010-09-11 tcptunnel-0.4
+
+	* Increased receive buffer.
+
+	* Code cleanup.
+
+
+2010-09-09 tcptunnel-0.3
+
+	* Added address binding patch from Newtral Human.
+
+	* Replaced strcpy with strncpy. Reported by Chris Benedict.
+
+	* Removed superfluous error messages. Reported by Chris Benedict.
+
+
+2004-12-28 tcptunnel-0.2
+
+	* Added support for Win32.
+
+
+2000-09-14 tcptunnel-0.1g
+
+	* Added support for HP-UX and SunOS.
+
+
+2000-09-11 tcptunnel-0.1f <smit@vossnet.de>
+
+	* Added getopt_long support for FreeBSD 2.2.2.
+
+
+2000-08-15 tcptunnel-0.1
+
+	* First public release.
+

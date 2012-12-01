@@ -1,0 +1,55 @@
+#!/bin/sh
+
+# '--help' option?
+HELP=`echo $* | sed -n -e 's/.*--help.*/HELP/p'`
+
+if [ "$HELP" = "HELP" ]; then
+	cat << EOF
+Usage: configure [options]
+
+Options:
+  --prefix=PATH
+  --help
+
+EOF
+	exit 1
+fi
+
+# '--prefix' option?
+PREFIX=`echo $* | sed -n -e 's/.*--prefix=\([^\ ]*\).*/\1/p'`
+
+if [ ! "$PREFIX" ]; then
+	PREFIX="/usr/local/bin/"
+fi
+
+PREFIX=`sh -c "echo $PREFIX"` # eval PREFIX=$PREFIX
+
+if [ ! -d "$PREFIX" ]; then
+	echo "configure: error: $PREFIX isn't a directory."
+
+	exit 1
+fi
+
+OS=`uname -s 2> /dev/null`
+case "$OS" in
+	Linux)
+	;;
+	SunOS)
+		LDFLAGS='-lxnet'
+	;;
+	FreeBSD)
+	;;
+	HP-UX)
+	;;
+esac
+echo "checking host system type... $OS"
+
+PREFIX=`echo $PREFIX | sed 's#\/#\\\/#g'`
+
+sed -n -e "s/@PREFIX@/$PREFIX/g;" \
+       -e "s/@LDFLAGS@/$LDFLAGS/g;" \
+       -e "w ./src/Makefile" \
+./src/Makefile.in
+
+echo "configure: configure complete, now type 'make' and 'make install'."
+

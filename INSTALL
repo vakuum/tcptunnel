@@ -1,0 +1,34 @@
+INSTALL
+
+	$ tar -zxvf tcptunnel-0.6.tar.gz
+	$ cd tcptunnel-0.6
+	$ ./configure --help
+	$ ./configure --prefix=/opt/tcptunnel-0.6
+	$ make clean
+	$ make
+	$ make install
+
+INSTALL: Windows
+
+	You will need MinGW32 to cross-compile tcptunnel. Please
+	see http://www.mingw.org/ for more details. If you are
+	using a Debian-based distribution then you will need to
+	install the following packages:
+
+	o mingw32
+	o mingw32-binutils
+	o mingw32-runtime
+
+	$ apt-get install mingw32 mingw32-binutils mingw32-runtime
+	$ tar -zxvf tcptunnel-0.6.tar.gz
+	$ cd tcptunnel-0.6
+	$ ./configure
+	$ make clean
+	$ make -f Makefile.MinGW32
+	$ file tcptunnel.exe
+	tcptunnel.exe: PE32 executable (console) Intel 80386, for MS Windows
+
+UNINSTALL
+
+	$ make uninstall
+
