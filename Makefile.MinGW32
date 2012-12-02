@@ -1,14 +1,14 @@
 FLAGS=CC=i586-mingw32msvc-g++ LD=i586-mingw32msvc-g++ LDFLAGS=-lws2_32 NAME=tcptunnel.exe
 
 all:
-	cd src; make $(FLAGS)
+	$(MAKE) -C src $(FLAGS)
 
 install:
-	cd src; make $(FLAGS) install
+	$(MAKE) -C src $(FLAGS) install
 
 uninstall:
-	cd src; make $(FLAGS) uninstall
+	$(MAKE) -C src $(FLAGS) uninstall
 
 clean:
-	cd src; make $(FLAGS) clean
+	$(MAKE) -C src $(FLAGS) clean
 

@@ -1,12 +1,12 @@
 all:
-	cd src; make
+	$(MAKE) -C src
 
 install:
-	cd src; make install
+	$(MAKE) -C src install
 
 uninstall:
-	cd src; make uninstall
+	$(MAKE) -C src uninstall
 
 clean:
-	cd src; make clean
+	$(MAKE) -C src clean
 
