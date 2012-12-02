@@ -21,14 +21,15 @@ You will need MinGW32 to cross-compile tcptunnel. Please see http://www.mingw.or
 * mingw32-binutils
 * mingw32-runtime
 
-
-	$ apt-get install mingw32 mingw32-binutils mingw32-runtime
-	$ git clone https://github.com/vakuum/tcptunnel.git
-	$ cd tcptunnel
-	$ ./configure
-	$ make -f Makefile.MinGW32
-	$ file tcptunnel
-	tcptunnel.exe: PE32 executable (console) Intel 80386, for MS Windows
+```
+$ apt-get install mingw32 mingw32-binutils mingw32-runtime
+$ git clone https://github.com/vakuum/tcptunnel.git
+$ cd tcptunnel
+$ ./configure
+$ make -f Makefile.MinGW32
+$ file tcptunnel
+tcptunnel.exe: PE32 executable (console) Intel 80386, for MS Windows
+```
 
 ## Help
 
