@@ -21,6 +21,7 @@ You will need MinGW32 to cross-compile tcptunnel. Please see http://www.mingw.or
 * mingw32-binutils
 * mingw32-runtime
 
+
 	$ apt-get install mingw32 mingw32-binutils mingw32-runtime
 	$ git clone https://github.com/vakuum/tcptunnel.git
 	$ cd tcptunnel
@@ -48,7 +49,7 @@ You will need MinGW32 to cross-compile tcptunnel. Please see http://www.mingw.or
 
 ## ChangeLog
 
-* [ChangeLog](https://raw.github.com/vakuum/tcptunnel/master/ChangeLog)
+See [ChangeLog](https://raw.github.com/vakuum/tcptunnel/master/ChangeLog).
 
 ## License
 
