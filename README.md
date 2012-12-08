@@ -6,12 +6,15 @@ Tcptunnel is a simple TCP port forwarder. Please see http://www.vakuumverpackt.d
 
 ### For Unix
 
-	$ git clone https://github.com/vakuum/tcptunnel.git
-	$ cd tcptunnel
-	$ ./configure
-	$ make
-	$ ./tcptunnel --version
-	$ ./tcptunnel --help
+```
+$ git clone https://github.com/vakuum/tcptunnel.git
+$ cd tcptunnel
+$ git checkout v0.6
+$ ./configure
+$ make
+$ ./tcptunnel --version
+$ ./tcptunnel --help
+```
 
 ### For Windows
 
@@ -25,28 +28,31 @@ You will need MinGW32 to cross-compile tcptunnel. Please see http://www.mingw.or
 $ apt-get install mingw32 mingw32-binutils mingw32-runtime
 $ git clone https://github.com/vakuum/tcptunnel.git
 $ cd tcptunnel
+$ git checkout v0.6
 $ ./configure
 $ make -f Makefile.MinGW32
-$ file tcptunnel
+$ file tcptunnel.exe
 tcptunnel.exe: PE32 executable (console) Intel 80386, for MS Windows
 ```
 
 ## Help
 
-	$ tcptunnel --help
-	Usage: tcptunnel [options]
+````
+$ tcptunnel --help
+Usage: tcptunnel [options]
 
-	Options:
-	  --version
-	  --help
+Options:
+  --version
+  --help
 
-	  --local-port=PORT    port to redirect
-	  --remote-port=PORT   target port
-	  --remote-host=HOST   target host
-	  --bind-address=IP    bind IP address
-	  --fork               fork-based concurrency
-	  --log-to-stdout
-	  --stay-alive
+  --local-port=PORT    port to redirect
+  --remote-port=PORT   target port
+  --remote-host=HOST   target host
+  --bind-address=IP    bind IP address
+  --fork               fork-based concurrency
+  --log-to-stdout
+  --stay-alive
+````
 
 ## ChangeLog
 
