@@ -9,7 +9,6 @@ Tcptunnel is a simple TCP port forwarder. Please see http://www.vakuumverpackt.d
 ```
 $ git clone https://github.com/vakuum/tcptunnel.git
 $ cd tcptunnel
-$ git checkout v0.6
 $ ./configure
 $ make
 $ ./tcptunnel --version
@@ -28,7 +27,6 @@ You will need MinGW32 to cross-compile tcptunnel. Please see http://www.mingw.or
 $ apt-get install mingw32 mingw32-binutils mingw32-runtime
 $ git clone https://github.com/vakuum/tcptunnel.git
 $ cd tcptunnel
-$ git checkout v0.6
 $ ./configure
 $ make -f Makefile.MinGW32
 $ file tcptunnel.exe
