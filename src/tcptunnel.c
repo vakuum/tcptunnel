@@ -208,7 +208,7 @@ void set_option(char **option, char *value)
 	size_t size = sizeof(char) * (strlen(value) + 1);
 
 	*option = (char *) malloc(size);
-	if (option == NULL)
+	if (*option == NULL)
 	{
 		perror("set_option: malloc()");
 		exit(1);
