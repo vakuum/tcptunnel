@@ -69,15 +69,7 @@ int main(int argc, char *argv[])
 	}
 #endif
 
-	exec_name = strrchr(argv[0], PATH_SEPARATOR);
-	if (exec_name)
-	{
-		exec_name++;
-	}
-	else
-	{
-		exec_name = argv[0];
-	}
+	exec_name = get_exec_name(argv);
 
 	set_options(argc, argv);
 
@@ -438,6 +430,16 @@ char *get_current_timestamp(void)
 	time(&date);
 	strftime(date_str, SIZE - 1, "%a %d %H:%M:%S", localtime(&date));
 	return date_str;
+}
+
+char *get_exec_name(char *argv[])
+{
+	char *name = strrchr(argv[0], PATH_SEPARATOR);
+	if (name)
+	{
+		return ++name;
+	}
+	return argv[0];
 }
 
 void print_usage(void)

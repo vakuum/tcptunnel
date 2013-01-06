@@ -31,6 +31,7 @@ void set_options(int argc, char *argv[]);
 void set_option(char **option, char *value);
 
 char *get_current_timestamp(void);
+char *get_exec_name(char *argv[]);
 
 void print_help(void);
 void print_helpinfo(void);
