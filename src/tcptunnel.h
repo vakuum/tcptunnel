@@ -17,7 +17,7 @@
 
 #define PATH_SEPARATOR '/'
 
-const char *exec_name;
+const char *name;
 
 int build_server(void);
 int wait_for_clients(void);

@@ -69,7 +69,7 @@ int main(int argc, char *argv[])
 	}
 #endif
 
-	exec_name = argv[0];
+	name = argv[0];
 
 	set_options(argc, argv);
 
@@ -434,12 +434,12 @@ char *get_current_timestamp(void)
 
 void print_usage(void)
 {
-	fprintf(stderr, "Usage: %s [options]\n\n", exec_name);
+	fprintf(stderr, "Usage: %s [options]\n\n", name);
 }
 
 void print_helpinfo(void)
 {
-	fprintf(stderr, "Try `%s --help' for more options\n", exec_name);
+	fprintf(stderr, "Try `%s --help' for more options\n", name);
 }
 
 void print_help(void)
@@ -475,7 +475,7 @@ Written by Clemens Fuchslocher <clemens@vakuumverpackt.de>\n\
 void print_missing(const char *message)
 {
 	print_usage();
-	fprintf(stderr, "%s: %s\n", exec_name, message);
+	fprintf(stderr, "%s: %s\n", name, message);
 	print_helpinfo();
 }
 
