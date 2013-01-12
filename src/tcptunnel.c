@@ -448,10 +448,10 @@ void print_help(void)
 Options:\n\
   --version\n\
   --help\n\n\
-  --local-port=PORT    port to redirect\n\
-  --remote-port=PORT   target port\n\
-  --remote-host=HOST   target host\n\
-  --bind-address=IP    bind IP address\n"
+  --local-port=PORT    local port\n\
+  --remote-port=PORT   remote port\n\
+  --remote-host=HOST   remote host\n\
+  --bind-address=IP    bind address\n"
 #ifndef __MINGW32__
 "  --fork               fork-based concurrency\n"
 #endif
