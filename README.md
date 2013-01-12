@@ -61,10 +61,10 @@ Options:
   --version
   --help
 
-  --local-port=PORT    port to redirect
-  --remote-port=PORT   target port
-  --remote-host=HOST   target host
-  --bind-address=IP    bind IP address
+  --local-port=PORT    local port
+  --remote-port=PORT   remote port
+  --remote-host=HOST   remote host
+  --bind-address=IP    bind address
   --fork               fork-based concurrency
   --log-to-stdout
   --stay-alive
