@@ -37,13 +37,13 @@ Note: The MinGW32-based version does not support the fork-based concurrent clien
 
 ### For Windows (Cygwin)
 
-You will need the Cygwin environment for Windows from http://www.cygwin.com/.
+You will need the Cygwin environment for Windows from http://www.cygwin.com/ with the following additional packages installed: gcc, git, make.
 
 ```
 $ uname -a
 CYGWIN_NT-6.1-WOW64 computer 1.7.17(0.262/5/3) 2012-10-19 14:39 i686 Cygwin
 
-$ git clone https://github.com/vakuum/tcptunnel.git
+$ git clone git://github.com/vakuum/tcptunnel.git
 $ cd tcptunnel
 $ ./configure
 $ make
