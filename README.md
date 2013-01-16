@@ -37,7 +37,11 @@ Note: The MinGW32-based version does not support the fork-based concurrent clien
 
 ### For Windows (Cygwin)
 
-You will need the Cygwin environment for Windows from http://www.cygwin.com/ with the following additional packages installed: gcc, git, make.
+You will need the Cygwin environment for Windows from http://www.cygwin.com/ with the following additional packages installed:
+
+* gcc
+* git
+* make
 
 ```
 $ uname -a
