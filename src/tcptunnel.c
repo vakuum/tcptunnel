@@ -223,6 +223,13 @@ int build_server(void)
 		perror("build_server: socket()");
 		return 1;
 	}
+	
+	int optval = 1;
+	if(setsockopt(rc.server_socket, SOL_SOCKET, SO_REUSEADDR, &optval, sizeof(optval)) < 0)
+	{
+		perror("build_server: setsockopt(SO_REUSEADDR");
+		return 1;
+	}
 
 	if (settings.bind_address)
 	{
