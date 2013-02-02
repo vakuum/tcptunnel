@@ -225,9 +225,9 @@ int build_server(void)
 	}
 	
 	int optval = 1;
-	if(setsockopt(rc.server_socket, SOL_SOCKET, SO_REUSEADDR, &optval, sizeof(optval)) < 0)
+	if (setsockopt(rc.server_socket, SOL_SOCKET, SO_REUSEADDR, &optval, sizeof(optval)) < 0)
 	{
-		perror("build_server: setsockopt(SO_REUSEADDR");
+		perror("build_server: setsockopt(SO_REUSEADDR)");
 		return 1;
 	}
 
