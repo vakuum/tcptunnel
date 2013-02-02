@@ -225,7 +225,11 @@ int build_server(void)
 	}
 	
 	int optval = 1;
+#ifdef __MINGW32__
+	if (setsockopt(rc.server_socket, SOL_SOCKET, SO_REUSEADDR, (const char *) &optval, sizeof(optval)) < 0)
+#else
 	if (setsockopt(rc.server_socket, SOL_SOCKET, SO_REUSEADDR, &optval, sizeof(optval)) < 0)
+#endif
 	{
 		perror("build_server: setsockopt(SO_REUSEADDR)");
 		return 1;
