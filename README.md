@@ -1,6 +1,6 @@
 # tcptunnel
 
-Tcptunnel is a simple TCP port forwarder. Please see http://www.vakuumverpackt.de/tcptunnel/ for full details.
+Tcptunnel is a simple TCP port forwarder. Please see http://www.vakuumverpackt.de/tcptunnel/ for details.
 
 ## Building
 
