@@ -1,21 +1,21 @@
 #!/bin/sh
 
-# '--help' option?
+# Help option?
 HELP=`echo $* | sed -n -e 's/.*--help.*/HELP/p'`
 
 if [ "$HELP" = "HELP" ]; then
-	cat << EOF
+	cat << END
 Usage: configure [options]
 
 Options:
   --prefix=PATH
   --help
 
-EOF
+END
 	exit 1
 fi
 
-# '--prefix' option?
+# Prefix option?
 PREFIX=`echo $* | sed -n -e 's/.*--prefix=\([^\ ]*\).*/\1/p'`
 
 if [ ! "$PREFIX" ]; then
@@ -26,20 +26,22 @@ PREFIX=`sh -c "echo $PREFIX"` # eval PREFIX=$PREFIX
 
 if [ ! -d "$PREFIX" ]; then
 	echo "configure: error: $PREFIX isn't a directory."
-
 	exit 1
 fi
 
 OS=`uname -s 2> /dev/null`
 case "$OS" in
-	Linux)
-	;;
-	SunOS)
-		LDFLAGS='-lxnet'
-	;;
 	FreeBSD)
 	;;
+
+	Linux)
+	;;
+
 	HP-UX)
+	;;
+
+	SunOS)
+		LDFLAGS='-lxnet'
 	;;
 esac
 echo "checking host system type... $OS"
