@@ -26,7 +26,7 @@
 
 2010-09-09 tcptunnel-0.3
 
-	* Added address binding patch from Newtral Human.
+	* Added address binding option. Patch by Newtral Human.
 
 	* Replaced strcpy with strncpy. Reported by Chris Benedict.
 
@@ -35,7 +35,7 @@
 
 2004-12-28 tcptunnel-0.2
 
-	* Added support for Win32.
+	* Added support for Windows.
 
 
 2000-09-14 tcptunnel-0.1g
