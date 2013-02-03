@@ -1,7 +1,7 @@
 #ifndef TCPTUNNEL_H
 #define TCPTUNNEL_H
 
-#define VERSION "0.6"
+#define VERSION "0.7"
 
 #define SIZE 4096
 

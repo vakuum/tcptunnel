@@ -1,3 +1,14 @@
+2013-02-03 tcptunnel-0.7
+
+	* Added Cygwin-based fork support for Windows.
+
+	* Added SO_REUSEADDR socket option. Patch by Anders Norman.
+
+	* Fixed Make warnings. Patch by Sebastian Pipping.
+
+	* Code cleanup.
+
+
 2012-10-20 tcptunnel-0.6
 
 	* Added fork option.
