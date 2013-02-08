@@ -474,7 +474,7 @@ Options:\n\
 void print_version(void)
 {
 	fprintf(stderr, "\
-tcptunnel v" VERSION " Copyright (C) 2000-2012 Clemens Fuchslocher\n\n\
+tcptunnel v" VERSION " Copyright (C) 2000-2013 Clemens Fuchslocher\n\n\
 This program is distributed in the hope that it will be useful,\n\
 but WITHOUT ANY WARRANTY; without even the implied warranty of\n\
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the\n\
