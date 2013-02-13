@@ -1,4 +1,4 @@
-# tcptunnel
+# tcptunnel [![Build Status](https://api.travis-ci.org/vakuum/tcptunnel.png?branch=master)](https://travis-ci.org/vakuum/tcptunnel)
 
 Tcptunnel is a simple TCP port forwarder. Please see http://www.vakuumverpackt.de/tcptunnel/ for details.
 
