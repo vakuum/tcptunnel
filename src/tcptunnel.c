@@ -108,28 +108,28 @@ void set_options(int argc, char *argv[])
 		{
 			case LOCAL_PORT_OPTION:
 			{
-				set_option(&options.local_port, optarg);
+				options.local_port = optarg;
 				settings.local_port = 1;
 				break;
 			}
 
 			case REMOTE_PORT_OPTION:
 			{
-				set_option(&options.remote_port, optarg);
+				options.remote_port = optarg;
 				settings.remote_port = 1;
 				break;
 			}
 
 			case REMOTE_HOST_OPTION:
 			{
-				set_option(&options.remote_host, optarg);
+				options.remote_host = optarg;
 				settings.remote_host = 1;
 				break;
 			}
 
 			case BIND_ADDRESS_OPTION:
 			{
-				set_option(&options.bind_address, optarg);
+				options.bind_address = optarg;
 				settings.bind_address = 1;
 				break;
 			}
@@ -193,20 +193,6 @@ void set_options(int argc, char *argv[])
 		print_missing("missing '--remote-host=' option.");
 		exit(1);
 	}
-}
-
-void set_option(char **option, char *value)
-{
-	size_t size = sizeof(char) * (strlen(value) + 1);
-
-	*option = (char *) malloc(size);
-	if (*option == NULL)
-	{
-		perror("set_option: malloc()");
-		exit(1);
-	}
-
-	strncpy(*option, value, size);
 }
 
 int build_server(void)
