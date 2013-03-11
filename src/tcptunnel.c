@@ -254,7 +254,8 @@ int wait_for_clients(void)
 	rc.client_socket = accept(rc.server_socket, (struct sockaddr *) &rc.client_addr, &client_addr_size);
 	if (rc.client_socket < 0)
 	{
-		if (errno != EINTR) {
+		if (errno != EINTR)
+		{
 			perror("wait_for_clients: accept()");
 		}
 		return 1;
