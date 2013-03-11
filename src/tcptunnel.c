@@ -345,7 +345,7 @@ int use_tunnel(void)
 
 		memset(buffer, 0, SIZE);
 
-		if (select(fd(), &io, NULL, NULL, NULL) < 0 )
+		if (select(fd(), &io, NULL, NULL, NULL) < 0)
 		{
 			perror("use_tunnel: select()");
 			break;
