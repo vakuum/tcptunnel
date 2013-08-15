@@ -70,7 +70,7 @@ Options:
   --remote-host=HOST   remote host
   --bind-address=IP    bind address
   --fork               fork-based concurrency
-  --log-to-stdout
+  --log
   --stay-alive
 ````
 

@@ -51,7 +51,7 @@ static struct option long_options[] = {
 #ifndef __MINGW32__
 	{ "fork",          no_argument,       NULL, FORK_OPTION },
 #endif
-	{ "log-to-stdout", no_argument,       NULL, LOG_TO_STDOUT },
+	{ "log",           no_argument,       NULL, LOG_OPTION },
 	{ "stay-alive",    no_argument,       NULL, STAY_ALIVE_OPTION },
 	{ "help",          no_argument,       NULL, HELP_OPTION },
 	{ "version",       no_argument,       NULL, VERSION_OPTION },
@@ -141,9 +141,9 @@ void set_options(int argc, char *argv[])
 				break;
 			}
 
-			case LOG_TO_STDOUT:
+			case LOG_OPTION:
 			{
-				settings.log_to_stdout = 1;
+				settings.log = 1;
 				break;
 			}
 
@@ -261,7 +261,7 @@ int wait_for_clients(void)
 		return 1;
 	}
 
-	if (settings.log_to_stdout)
+	if (settings.log)
 	{
 		printf("> %s tcptunnel: request from %s\n", get_current_timestamp(), inet_ntoa(rc.client_addr.sin_addr));
 	}
@@ -371,7 +371,7 @@ int use_tunnel(void)
 
 			send(rc.remote_socket, buffer, count, 0);
 
-			if (settings.log_to_stdout)
+			if (settings.log)
 			{
 				printf("> %s > ", get_current_timestamp());
 				fwrite(buffer, sizeof(char), count, stdout);
@@ -399,7 +399,7 @@ int use_tunnel(void)
 
 			send(rc.client_socket, buffer, count, 0);
 
-			if (settings.log_to_stdout)
+			if (settings.log)
 			{
 				fwrite(buffer, sizeof(char), count, stdout);
 				fflush(stdout);
@@ -453,7 +453,7 @@ Options:\n\
 #ifndef __MINGW32__
 "  --fork               fork-based concurrency\n"
 #endif
-"  --log-to-stdout\n\
+"  --log\n\
   --stay-alive\n\n\
 \n");
 }

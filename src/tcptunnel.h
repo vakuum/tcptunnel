@@ -10,7 +10,7 @@
 #define REMOTE_HOST_OPTION  'c'
 #define BIND_ADDRESS_OPTION 'd'
 #define FORK_OPTION         'e'
-#define LOG_TO_STDOUT       'f'
+#define LOG_OPTION          'f'
 #define STAY_ALIVE_OPTION   'g'
 #define HELP_OPTION         'h'
 #define VERSION_OPTION      'i'
@@ -44,7 +44,7 @@ struct struct_settings {
 	unsigned int remote_port   : 1;
 	unsigned int bind_address  : 1;
 	unsigned int fork          : 1;
-	unsigned int log_to_stdout : 1;
+	unsigned int log           : 1;
 	unsigned int stay_alive    : 1;
 };
 
