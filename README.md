@@ -69,6 +69,7 @@ Options:
   --remote-port=PORT   remote port
   --remote-host=HOST   remote host
   --bind-address=IP    bind address
+  --buffer-size=BYTES  buffer size
   --fork               fork-based concurrency
   --log
   --stay-alive

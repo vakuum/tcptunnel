@@ -3,17 +3,16 @@
 
 #define VERSION "0.7"
 
-#define SIZE 4096
-
 #define LOCAL_PORT_OPTION   'a'
 #define REMOTE_PORT_OPTION  'b'
 #define REMOTE_HOST_OPTION  'c'
 #define BIND_ADDRESS_OPTION 'd'
-#define FORK_OPTION         'e'
-#define LOG_OPTION          'f'
-#define STAY_ALIVE_OPTION   'g'
-#define HELP_OPTION         'h'
-#define VERSION_OPTION      'i'
+#define BUFFER_SIZE_OPTION  'e'
+#define FORK_OPTION         'f'
+#define LOG_OPTION          'g'
+#define STAY_ALIVE_OPTION   'h'
+#define HELP_OPTION         'i'
+#define VERSION_OPTION      'j'
 
 #define PATH_SEPARATOR '/'
 
@@ -43,6 +42,7 @@ struct struct_settings {
 	unsigned int remote_host   : 1;
 	unsigned int remote_port   : 1;
 	unsigned int bind_address  : 1;
+	unsigned int buffer_size   : 1;
 	unsigned int fork          : 1;
 	unsigned int log           : 1;
 	unsigned int stay_alive    : 1;
@@ -53,6 +53,7 @@ struct struct_options {
 	char *remote_host;
 	char *remote_port;
 	char *bind_address;
+	unsigned int buffer_size;
 };
 
 struct struct_rc {

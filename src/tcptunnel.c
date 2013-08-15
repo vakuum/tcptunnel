@@ -48,6 +48,7 @@ static struct option long_options[] = {
 	{ "remote-host",   required_argument, NULL, REMOTE_HOST_OPTION },
 	{ "remote-port",   required_argument, NULL, REMOTE_PORT_OPTION },
 	{ "bind-address",  required_argument, NULL, BIND_ADDRESS_OPTION },
+	{ "buffer-size",   required_argument, NULL, BUFFER_SIZE_OPTION },
 #ifndef __MINGW32__
 	{ "fork",          no_argument,       NULL, FORK_OPTION },
 #endif
@@ -101,6 +102,8 @@ void set_options(int argc, char *argv[])
 	int opt;
 	int index;
 
+	options.buffer_size = 4096;
+
 	do
 	{
 		opt = getopt_long(argc, argv, "", long_options, &index);
@@ -131,6 +134,13 @@ void set_options(int argc, char *argv[])
 			{
 				options.bind_address = optarg;
 				settings.bind_address = 1;
+				break;
+			}
+
+			case BUFFER_SIZE_OPTION:
+			{
+				options.buffer_size = atoi(optarg);
+				settings.buffer_size = 1;
 				break;
 			}
 
@@ -335,7 +345,7 @@ int build_tunnel(void)
 int use_tunnel(void)
 {
 	fd_set io;
-	char buffer[SIZE];
+	char buffer[options.buffer_size];
 
 	for (;;)
 	{
@@ -343,7 +353,7 @@ int use_tunnel(void)
 		FD_SET(rc.client_socket, &io);
 		FD_SET(rc.remote_socket, &io);
 
-		memset(buffer, 0, SIZE);
+		memset(buffer, 0, sizeof(buffer));
 
 		if (select(fd(), &io, NULL, NULL, NULL) < 0)
 		{
@@ -353,7 +363,7 @@ int use_tunnel(void)
 
 		if (FD_ISSET(rc.client_socket, &io))
 		{
-			int count = recv(rc.client_socket, buffer, SIZE, 0);
+			int count = recv(rc.client_socket, buffer, sizeof(buffer), 0);
 			if (count < 0)
 			{
 				perror("use_tunnel: recv(rc.client_socket)");
@@ -381,7 +391,7 @@ int use_tunnel(void)
 
 		if (FD_ISSET(rc.remote_socket, &io))
 		{
-			int count = recv(rc.remote_socket, buffer, SIZE, 0);
+			int count = recv(rc.remote_socket, buffer, sizeof(buffer), 0);
 			if (count < 0)
 			{
 				perror("use_tunnel: recv(rc.remote_socket)");
@@ -449,7 +459,8 @@ Options:\n\
   --local-port=PORT    local port\n\
   --remote-port=PORT   remote port\n\
   --remote-host=HOST   remote host\n\
-  --bind-address=IP    bind address\n"
+  --bind-address=IP    bind address\n\
+  --buffer-size=BYTES  buffer size\n"
 #ifndef __MINGW32__
 "  --fork               fork-based concurrency\n"
 #endif
