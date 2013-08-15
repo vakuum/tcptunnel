@@ -422,11 +422,11 @@ int fd(void)
 
 char *get_current_timestamp(void)
 {
-	static char date_str[SIZE];
+	static char date_str[20];
 	time_t date;
 
 	time(&date);
-	strftime(date_str, SIZE - 1, "%a %d %H:%M:%S", localtime(&date));
+	strftime(date_str, sizeof(date_str), "%Y-%m-%d %H:%M:%S", localtime(&date));
 	return date_str;
 }
 
