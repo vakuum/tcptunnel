@@ -15,6 +15,24 @@ $ ./tcptunnel --version
 $ ./tcptunnel --help
 ```
 
+### For Mac OS X
+
+You will need the [Command Line Tools for Xcode](https://developer.apple.com/xcode/) to build tcptunnel under Mac OS X.
+
+```
+$ uname -mrs
+Darwin 12.5.0 x86_64
+
+$ git clone https://github.com/vakuum/tcptunnel.git
+$ cd tcptunnel
+$ ./configure --prefix=/usr/bin
+$ make
+$ ./tcptunnel --version
+$ ./tcptunnel --help
+$ file tcptunnel
+tcptunnel: Mach-O 64-bit executable x86_64
+```
+
 ### For Windows (MinGW32)
 
 You will need MinGW32 to cross-compile tcptunnel. Please see http://www.mingw.org/ for more details. If you are using a Debian-based distribution then you will need to install the following packages:
