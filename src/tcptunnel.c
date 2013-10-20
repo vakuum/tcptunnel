@@ -41,7 +41,7 @@
 
 struct struct_rc rc;
 struct struct_options options;
-struct struct_settings settings = { 0, 0, 0, 0, 0, 0, 0 };
+struct struct_settings settings = { 0, 0, 0, 0, 0, 0, 0, 0 };
 
 static struct option long_options[] = {
 	{ "local-port",    required_argument, NULL, LOCAL_PORT_OPTION },
