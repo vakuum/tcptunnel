@@ -38,14 +38,14 @@ void print_version(void);
 void print_missing(const char *message);
 
 struct struct_settings {
-	unsigned int local_port    : 1;
-	unsigned int remote_host   : 1;
-	unsigned int remote_port   : 1;
-	unsigned int bind_address  : 1;
-	unsigned int buffer_size   : 1;
-	unsigned int fork          : 1;
-	unsigned int log           : 1;
-	unsigned int stay_alive    : 1;
+	unsigned int local_port   : 1;
+	unsigned int remote_host  : 1;
+	unsigned int remote_port  : 1;
+	unsigned int bind_address : 1;
+	unsigned int buffer_size  : 1;
+	unsigned int fork         : 1;
+	unsigned int log          : 1;
+	unsigned int stay_alive   : 1;
 };
 
 struct struct_options {
