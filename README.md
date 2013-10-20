@@ -47,6 +47,8 @@ $ git clone https://github.com/vakuum/tcptunnel.git
 $ cd tcptunnel
 $ ./configure
 $ make -f Makefile.MinGW32
+$ ./tcptunnel --version
+$ ./tcptunnel --help
 $ file tcptunnel.exe
 tcptunnel.exe: PE32 executable (console) Intel 80386, for MS Windows
 ```
@@ -69,6 +71,8 @@ $ git clone git://github.com/vakuum/tcptunnel.git
 $ cd tcptunnel
 $ ./configure
 $ make
+$ ./tcptunnel --version
+$ ./tcptunnel --help
 $ file tcptunnel.exe
 tcptunnel.exe: PE32 executable (console) Intel 80386, for MS Windows
 ```
