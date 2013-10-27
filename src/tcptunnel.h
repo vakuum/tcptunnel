@@ -1,7 +1,7 @@
 #ifndef TCPTUNNEL_H
 #define TCPTUNNEL_H
 
-#define VERSION "0.7"
+#define VERSION "0.8"
 
 #define LOCAL_PORT_OPTION   'a'
 #define REMOTE_PORT_OPTION  'b'
