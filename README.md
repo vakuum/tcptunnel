@@ -33,26 +33,6 @@ $ file tcptunnel
 tcptunnel: Mach-O 64-bit executable x86_64
 ```
 
-### For Windows (MinGW32)
-
-You will need MinGW32 to cross-compile tcptunnel. Please see http://www.mingw.org/ for more details. If you are using a Debian-based distribution then you will need to install the following packages:
-
-* mingw32
-* mingw32-binutils
-* mingw32-runtime
-
-```
-$ apt-get install mingw32 mingw32-binutils mingw32-runtime
-$ git clone https://github.com/vakuum/tcptunnel.git
-$ cd tcptunnel
-$ ./configure
-$ make -f Makefile.MinGW32
-$ file tcptunnel.exe
-tcptunnel.exe: PE32 executable (console) Intel 80386, for MS Windows
-```
-
-Note: The MinGW32-based version does not support the fork-based concurrent client handling. If you need this feature under Windows, then you should use the Cygwin-based version.
-
 ### For Windows (Cygwin)
 
 You will need the Cygwin environment for Windows from http://www.cygwin.com/ with the following additional packages installed:
@@ -74,6 +54,26 @@ $ ./tcptunnel --help
 $ file tcptunnel.exe
 tcptunnel.exe: PE32 executable (console) Intel 80386, for MS Windows
 ```
+
+### For Windows (MinGW32)
+
+You will need MinGW32 to cross-compile tcptunnel. Please see http://www.mingw.org/ for more details. If you are using a Debian-based distribution then you will need to install the following packages:
+
+* mingw32
+* mingw32-binutils
+* mingw32-runtime
+
+```
+$ apt-get install mingw32 mingw32-binutils mingw32-runtime
+$ git clone https://github.com/vakuum/tcptunnel.git
+$ cd tcptunnel
+$ ./configure
+$ make -f Makefile.MinGW32
+$ file tcptunnel.exe
+tcptunnel.exe: PE32 executable (console) Intel 80386, for MS Windows
+```
+
+Note: The MinGW32-based version does not support the fork-based concurrent client handling. If you need this feature under Windows, then you should use the Cygwin-based version.
 
 ## Help
 
