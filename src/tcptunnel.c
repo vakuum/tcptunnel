@@ -253,10 +253,10 @@ int build_server(void)
 
 int wait_for_clients(void)
 {
-#ifndef __MINGW32__
-	unsigned int client_addr_size;
-#else
+#if defined(__MINGW32__) || defined(__CYGWIN__)
 	int client_addr_size;
+#else
+	unsigned int client_addr_size;
 #endif
 
 	client_addr_size = sizeof(struct sockaddr_in);
