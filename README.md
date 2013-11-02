@@ -77,7 +77,7 @@ Note: The MinGW32-based version does not support the fork-based concurrent clien
 
 ## Help
 
-````
+```
 $ tcptunnel --help
 Usage: tcptunnel [options]
 
@@ -93,7 +93,7 @@ Options:
   --fork               fork-based concurrency
   --log
   --stay-alive
-````
+```
 
 ## ChangeLog
 
