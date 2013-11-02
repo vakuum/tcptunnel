@@ -281,7 +281,9 @@ int wait_for_clients(void)
 
 void handle_client(void)
 {
-#ifndef __MINGW32__
+#ifdef __MINGW32__
+	handle_tunnel();
+#else
 	if (settings.fork)
 	{
 		if (fork() == 0)
@@ -294,9 +296,7 @@ void handle_client(void)
 	}
 	else
 	{
-#endif
 		handle_tunnel();
-#ifndef __MINGW32__
 	}
 #endif
 }
