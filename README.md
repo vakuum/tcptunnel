@@ -33,6 +33,25 @@ $ file tcptunnel
 tcptunnel: Mach-O 64-bit executable x86_64
 ```
 
+### For Mac OS X (Homebrew)
+
+Thanks to [Edward Samson's](https://github.com/esamson) [pull request](https://github.com/Homebrew/homebrew/pull/23977), you can also use [Homebrew](http://brew.sh/) to install tcptunnel under Mac OS X.
+
+```
+$ uname -mrs
+Darwin 12.5.0 x86_64
+
+$ brew --version
+0.9.5
+
+$ brew info tcptunnel
+$ brew install tcptunnel
+$ tcptunnel --version
+$ tcptunnel --help
+$ file $(which tcptunnel)
+/usr/local/bin/tcptunnel: Mach-O 64-bit executable x86_64
+```
+
 ### For Windows (Cygwin)
 
 You will need the Cygwin environment for Windows from http://www.cygwin.com/ with the following additional packages installed:
