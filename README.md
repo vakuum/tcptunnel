@@ -2,6 +2,26 @@
 
 Tcptunnel is a simple TCP port forwarder. Please see http://www.vakuumverpackt.de/tcptunnel/ for details and binary downloads.
 
+## Help
+
+```
+$ tcptunnel --help
+Usage: tcptunnel [options]
+
+Options:
+  --version
+  --help
+
+  --local-port=PORT    local port
+  --remote-port=PORT   remote port
+  --remote-host=HOST   remote host
+  --bind-address=IP    bind address
+  --buffer-size=BYTES  buffer size
+  --fork               fork-based concurrency
+  --log
+  --stay-alive
+```
+
 ## Building
 
 ### For Unix
@@ -94,26 +114,6 @@ tcptunnel.exe: PE32 executable (console) Intel 80386, for MS Windows
 ```
 
 Note: The MinGW32-based version does not support the fork-based concurrent client handling. If you need this feature under Windows, then you should use the Cygwin-based version.
-
-## Help
-
-```
-$ tcptunnel --help
-Usage: tcptunnel [options]
-
-Options:
-  --version
-  --help
-
-  --local-port=PORT    local port
-  --remote-port=PORT   remote port
-  --remote-host=HOST   remote host
-  --bind-address=IP    bind address
-  --buffer-size=BYTES  buffer size
-  --fork               fork-based concurrency
-  --log
-  --stay-alive
-```
 
 ## ChangeLog
 
