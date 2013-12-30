@@ -44,6 +44,7 @@ Darwin 12.5.0 x86_64
 $ brew --version
 0.9.5
 
+$ brew update
 $ brew info tcptunnel
 $ brew install tcptunnel
 $ tcptunnel --version
