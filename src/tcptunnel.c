@@ -41,7 +41,7 @@
 
 struct struct_rc rc;
 struct struct_options options;
-struct struct_settings settings = { 0, 0, 0, 0, 0, 0, 0, 0 };
+struct struct_settings settings = { 0, 0, 0, 0, 0, 0, 0, 0, 0 };
 
 static struct option long_options[] = {
 	{ "local-port",    required_argument, NULL, LOCAL_PORT_OPTION },
@@ -49,6 +49,7 @@ static struct option long_options[] = {
 	{ "remote-port",   required_argument, NULL, REMOTE_PORT_OPTION },
 	{ "bind-address",  required_argument, NULL, BIND_ADDRESS_OPTION },
 	{ "buffer-size",   required_argument, NULL, BUFFER_SIZE_OPTION },
+	{ "client-addr",   required_argument, NULL, CLIENT_ADDR_OPTION },
 #ifndef __MINGW32__
 	{ "fork",          no_argument,       NULL, FORK_OPTION },
 #endif
@@ -143,6 +144,11 @@ void set_options(int argc, char *argv[])
 				settings.buffer_size = 1;
 				break;
 			}
+
+			case CLIENT_ADDR_OPTION:
+				options.client_addr = optarg;
+				settings.client_addr = 1;
+				break;
 
 			case FORK_OPTION:
 			{
@@ -268,6 +274,12 @@ int wait_for_clients(void)
 		{
 			perror("wait_for_clients: accept()");
 		}
+		return 1;
+	}
+
+	if(settings.client_addr && (strcmp(inet_ntoa(rc.client_addr.sin_addr), options.client_addr) != 0)) {
+		if (settings.log)
+			printf("> %s tcptunnel: refused request request from %s\n", get_current_timestamp(), inet_ntoa(rc.client_addr.sin_addr));
 		return 1;
 	}
 
