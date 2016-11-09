@@ -473,6 +473,7 @@ Options:\n\
   --remote-port=PORT   remote port\n\
   --remote-host=HOST   remote host\n\
   --bind-address=IP    bind address\n\
+  --client-addr=IP     only accept connections from this address\n\
   --buffer-size=BYTES  buffer size\n"
 #ifndef __MINGW32__
 "  --fork               fork-based concurrency\n"
