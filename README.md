@@ -16,6 +16,7 @@ Options:
   --remote-port=PORT   remote port
   --remote-host=HOST   remote host
   --bind-address=IP    bind address
+  --client-addr=IP	Only accept connections from this IP address
   --buffer-size=BYTES  buffer size
   --fork               fork-based concurrency
   --log
