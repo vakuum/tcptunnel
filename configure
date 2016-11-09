@@ -47,6 +47,7 @@ esac
 echo "checking host system type... $OS"
 
 PREFIX=`echo $PREFIX | sed 's#\/#\\\/#g'`
+LDFLAGS=`echo $LDFLAGS | sed 's#\/#\\\/#g'`
 
 sed -n -e "s/@PREFIX@/$PREFIX/g;" \
        -e "s/@LDFLAGS@/$LDFLAGS/g;" \
