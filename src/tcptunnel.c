@@ -280,7 +280,7 @@ int wait_for_clients(void)
 	if(settings.client_addr && (strcmp(inet_ntoa(rc.client_addr.sin_addr), options.client_addr) != 0)) {
 		if (settings.log)
 			printf("> %s tcptunnel: refused request request from %s\n", get_current_timestamp(), inet_ntoa(rc.client_addr.sin_addr));
-		close(rc.client.socket);
+		close(rc.client_socket);
 		return 1;
 	}
 
