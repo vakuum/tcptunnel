@@ -48,8 +48,8 @@ static struct option long_options[] = {
 	{ "remote-host",   required_argument, NULL, REMOTE_HOST_OPTION },
 	{ "remote-port",   required_argument, NULL, REMOTE_PORT_OPTION },
 	{ "bind-address",  required_argument, NULL, BIND_ADDRESS_OPTION },
+	{ "client-address", required_argument, NULL, CLIENT_ADDRESS_OPTION },
 	{ "buffer-size",   required_argument, NULL, BUFFER_SIZE_OPTION },
-	{ "client-addr",   required_argument, NULL, CLIENT_ADDR_OPTION },
 #ifndef __MINGW32__
 	{ "fork",          no_argument,       NULL, FORK_OPTION },
 #endif
@@ -145,10 +145,12 @@ void set_options(int argc, char *argv[])
 				break;
 			}
 
-			case CLIENT_ADDR_OPTION:
-				options.client_addr = optarg;
-				settings.client_addr = 1;
+			case CLIENT_ADDRESS_OPTION:
+			{
+				options.client_address = optarg;
+				settings.client_address = 1;
 				break;
+			}
 
 			case FORK_OPTION:
 			{
@@ -277,9 +279,12 @@ int wait_for_clients(void)
 		return 1;
 	}
 
-	if(settings.client_addr && (strcmp(inet_ntoa(rc.client_addr.sin_addr), options.client_addr) != 0)) {
+	if(settings.client_address && (strcmp(inet_ntoa(rc.client_addr.sin_addr), options.client_address) != 0))
+	{
 		if (settings.log)
-			printf("> %s tcptunnel: refused request request from %s\n", get_current_timestamp(), inet_ntoa(rc.client_addr.sin_addr));
+		{
+			printf("> %s tcptunnel: refused request from %s\n", get_current_timestamp(), inet_ntoa(rc.client_addr.sin_addr));
+		}
 		close(rc.client_socket);
 		return 1;
 	}
@@ -473,7 +478,7 @@ Options:\n\
   --remote-port=PORT   remote port\n\
   --remote-host=HOST   remote host\n\
   --bind-address=IP    bind address\n\
-  --client-addr=IP     only accept connections from this address\n\
+  --client-address=IP  only accept connections from this address\n\
   --buffer-size=BYTES  buffer size\n"
 #ifndef __MINGW32__
 "  --fork               fork-based concurrency\n"
