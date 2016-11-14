@@ -13,6 +13,7 @@
 #define STAY_ALIVE_OPTION   'h'
 #define HELP_OPTION         'i'
 #define VERSION_OPTION      'j'
+#define	CLIENT_ADDRESS_OPTION 'k'
 
 #define PATH_SEPARATOR '/'
 
@@ -46,6 +47,7 @@ struct struct_settings {
 	unsigned int fork         : 1;
 	unsigned int log          : 1;
 	unsigned int stay_alive   : 1;
+	unsigned int client_address : 1;
 };
 
 struct struct_options {
@@ -53,6 +55,7 @@ struct struct_options {
 	char *remote_host;
 	char *remote_port;
 	char *bind_address;
+	const char *client_address;
 	unsigned int buffer_size;
 };
 
