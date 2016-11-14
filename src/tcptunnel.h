@@ -3,17 +3,17 @@
 
 #define VERSION "0.8"
 
-#define LOCAL_PORT_OPTION   'a'
-#define REMOTE_PORT_OPTION  'b'
-#define REMOTE_HOST_OPTION  'c'
-#define BIND_ADDRESS_OPTION 'd'
-#define BUFFER_SIZE_OPTION  'e'
-#define FORK_OPTION         'f'
-#define LOG_OPTION          'g'
-#define STAY_ALIVE_OPTION   'h'
-#define HELP_OPTION         'i'
-#define VERSION_OPTION      'j'
-#define	CLIENT_ADDRESS_OPTION 'k'
+#define LOCAL_PORT_OPTION     'a'
+#define REMOTE_PORT_OPTION    'b'
+#define REMOTE_HOST_OPTION    'c'
+#define BIND_ADDRESS_OPTION   'd'
+#define CLIENT_ADDRESS_OPTION 'e'
+#define BUFFER_SIZE_OPTION    'f'
+#define FORK_OPTION           'g'
+#define LOG_OPTION            'h'
+#define STAY_ALIVE_OPTION     'i'
+#define HELP_OPTION           'j'
+#define VERSION_OPTION        'k'
 
 #define PATH_SEPARATOR '/'
 
@@ -39,22 +39,22 @@ void print_version(void);
 void print_missing(const char *message);
 
 struct struct_settings {
-	unsigned int local_port   : 1;
-	unsigned int remote_host  : 1;
-	unsigned int remote_port  : 1;
-	unsigned int bind_address : 1;
-	unsigned int buffer_size  : 1;
-	unsigned int fork         : 1;
-	unsigned int log          : 1;
-	unsigned int stay_alive   : 1;
+	unsigned int local_port     : 1;
+	unsigned int remote_host    : 1;
+	unsigned int remote_port    : 1;
+	unsigned int bind_address   : 1;
 	unsigned int client_address : 1;
+	unsigned int buffer_size    : 1;
+	unsigned int fork           : 1;
+	unsigned int log            : 1;
+	unsigned int stay_alive     : 1;
 };
 
 struct struct_options {
-	char *local_port;
-	char *remote_host;
-	char *remote_port;
-	char *bind_address;
+	const char *local_port;
+	const char *remote_host;
+	const char *remote_port;
+	const char *bind_address;
 	const char *client_address;
 	unsigned int buffer_size;
 };

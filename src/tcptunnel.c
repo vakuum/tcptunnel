@@ -279,7 +279,7 @@ int wait_for_clients(void)
 		return 1;
 	}
 
-	if(settings.client_address && (strcmp(inet_ntoa(rc.client_addr.sin_addr), options.client_address) != 0))
+	if (settings.client_address && (strcmp(inet_ntoa(rc.client_addr.sin_addr), options.client_address) != 0))
 	{
 		if (settings.log)
 		{
