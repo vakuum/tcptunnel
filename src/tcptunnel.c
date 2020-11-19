@@ -371,8 +371,6 @@ int use_tunnel(void)
 		FD_SET(rc.client_socket, &io);
 		FD_SET(rc.remote_socket, &io);
 
-		memset(buffer, 0, sizeof(buffer));
-
 		if (select(fd(), &io, NULL, NULL, NULL) < 0)
 		{
 			perror("use_tunnel: select()");
