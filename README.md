@@ -122,5 +122,5 @@ See [ChangeLog](https://raw.github.com/vakuum/tcptunnel/master/ChangeLog).
 
 ## License
 
-Copyright (c) 2000-2016 Clemens Fuchslocher, released under the GPL.
+Copyright (c) 2000-2021 Clemens Fuchslocher, released under the GPL.
 

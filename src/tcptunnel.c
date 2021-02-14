@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2000-2015 Clemens Fuchslocher <clemens@vakuumverpackt.de>
+ * Copyright (C) 2000-2021 Clemens Fuchslocher <clemens@vakuumverpackt.de>
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -489,7 +489,7 @@ Options:\n\
 void print_version(void)
 {
 	fprintf(stderr, "\
-tcptunnel v" VERSION " Copyright (C) 2000-2013 Clemens Fuchslocher\n\n\
+tcptunnel v" VERSION " Copyright (C) 2000-2021 Clemens Fuchslocher\n\n\
 This program is distributed in the hope that it will be useful,\n\
 but WITHOUT ANY WARRANTY; without even the implied warranty of\n\
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the\n\
