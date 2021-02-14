@@ -1,9 +1,0 @@
-language: c
-
-before_script:
-  - ./configure
-  - make
-
-script: ./tcptunnel --version && ./tcptunnel --help
-
-compiler: gcc
