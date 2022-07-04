@@ -385,6 +385,14 @@ int use_tunnel(void)
 				perror("use_tunnel: recv(rc.client_socket)");
 				close(rc.client_socket);
 				close(rc.remote_socket);
+
+				if (settings.log)
+				{
+					printf("> %s > ", get_current_timestamp());
+					fwrite(buffer, sizeof(char), count, stdout);
+					fflush(stdout);
+				}
+
 				return 1;
 			}
 
@@ -395,13 +403,28 @@ int use_tunnel(void)
 				return 0;
 			}
 
-			send(rc.remote_socket, buffer, count, 0);
-
-			if (settings.log)
+			int countSend = send(rc.remote_socket, buffer, count, 0);
+			if (countSend < 0)
 			{
-				printf("> %s > ", get_current_timestamp());
-				fwrite(buffer, sizeof(char), count, stdout);
-				fflush(stdout);
+				perror("use_tunnel: send(rc.client_socket)");
+				close(rc.client_socket);
+				close(rc.remote_socket);
+
+				if (settings.log)
+				{
+					printf("> %s > ", get_current_timestamp());
+					fwrite(buffer, sizeof(char), count, stdout);
+					fflush(stdout);
+				}
+
+				return 1;
+			}
+
+			if (countSend == 0)
+			{
+				close(rc.client_socket);
+				close(rc.remote_socket);
+				return 0;
 			}
 		}
 
@@ -413,6 +436,14 @@ int use_tunnel(void)
 				perror("use_tunnel: recv(rc.remote_socket)");
 				close(rc.client_socket);
 				close(rc.remote_socket);
+
+				if (settings.log)
+				{
+					printf("> %s > ", get_current_timestamp());
+					fwrite(buffer, sizeof(char), count, stdout);
+					fflush(stdout);
+				}
+
 				return 1;
 			}
 
@@ -423,12 +454,28 @@ int use_tunnel(void)
 				return 0;
 			}
 
-			send(rc.client_socket, buffer, count, 0);
-
-			if (settings.log)
+			int countSend = send(rc.client_socket, buffer, count, 0);
+			if (countSend < 0)
 			{
-				fwrite(buffer, sizeof(char), count, stdout);
-				fflush(stdout);
+				perror("use_tunnel: send(rc.client_socket)");
+				close(rc.client_socket);
+				close(rc.remote_socket);
+
+				if (settings.log)
+				{
+					printf("> %s > ", get_current_timestamp());
+					fwrite(buffer, sizeof(char), count, stdout);
+					fflush(stdout);
+				}
+
+				return 1;
+			}
+
+			if (countSend == 0)
+			{
+				close(rc.client_socket);
+				close(rc.remote_socket);
+				return 0;
 			}
 		}
 	}
